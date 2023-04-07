@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/MyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/StartChat.gd" type="Script" id=2]
+
+[node name="StartChat" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Host" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 128.0
+margin_right = 608.0
+margin_bottom = 192.0
+text = "HOST"
+
+[node name="Client" type="Button" parent="."]
+margin_left = 224.0
+margin_top = 256.0
+margin_right = 416.0
+margin_bottom = 320.0
+text = "CLIENT"
+
+[node name="Address" type="LineEdit" parent="Client"]
+margin_left = 256.0
+margin_right = 576.0
+margin_bottom = 64.0
+align = 1
+placeholder_text = "localhost"
+
+[node name="Server" type="Button" parent="."]
+visible = false
+margin_left = 416.0
+margin_top = 384.0
+margin_right = 608.0
+margin_bottom = 448.0
+disabled = true
+text = "SERVER ONLY"
+
+[node name="Username" type="LineEdit" parent="."]
+margin_left = 256.0
+margin_top = 384.0
+margin_right = 768.0
+margin_bottom = 448.0
+align = 1
+placeholder_text = "USERNAME"
+
+[connection signal="pressed" from="Host" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="Client" to="." method="_on_Client_pressed"]
+[connection signal="pressed" from="Server" to="." method="_on_Server_pressed"]
